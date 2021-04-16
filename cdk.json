@@ -6,6 +6,40 @@
     "@aws-cdk/core:stackRelativeExports": "true",
     "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
     "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
-    "@aws-cdk/aws-kms:defaultKeyPolicies": true
+    "@aws-cdk/aws-kms:defaultKeyPolicies": true,
+    "SnsStack": {
+      "email": "Your email address"
+    },
+    "NetworkStack": {
+      "enableDnsHostnames": true,
+      "enableDnsSupport": true,
+      "cidr": "10.0.0.0/16",
+      "natGateways": 0,
+      "maxAzs": 2
+    },
+    "SecurityGroupStack": {
+      "vpcId": "vpc id",
+      "ssl": false
+    },
+    "Ec2Stack": {
+      "vpcId": "vpc id",
+      "albSecurityGroupId": "alb security group id",
+      "ec2SecurityGroupId": "ec2 security group id",
+      "ssl": false,
+      "keyName": "",
+      "certificateArn": ""
+    },
+    "RdsStack": {
+      "vpcId": "vpc id",
+      "rdsSecurityGroupId": "rds security group id",
+      "rdsInstanceIdentifier": "instance identifier",
+      "rdsDatabaseName": "database name",
+      "rdsMultiAz": false,
+      "availabilityZone": "availability zone",
+      "rdsBackupRetentionDay": 4,
+      "deletionProtection": false,
+      "cpuAlarmEvaluationPeriods": 1,
+      "cpuAlarmThreshold": 80
+    }
   }
 }
